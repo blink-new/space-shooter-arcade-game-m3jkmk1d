@@ -4,22 +4,22 @@ import { Bullet } from './Bullet';
 import { Enemy } from './Enemy';
 import { PowerUp } from './PowerUp';
 
-interface GameObject {
+interface GameObjectBase {
   id: string;
   position: { x: number; y: number };
 }
 
-interface BulletObject extends GameObject {
+interface BulletObject extends GameObjectBase {
   type: 'bullet';
 }
 
-interface EnemyObject extends GameObject {
+interface EnemyObject extends GameObjectBase {
   type: 'enemy';
   enemyType: 'normal' | 'boss';
   health: number;
 }
 
-interface PowerUpObject extends GameObject {
+interface PowerUpObject extends GameObjectBase {
   type: 'powerup';
   powerType: 'weapon' | 'shield';
 }
